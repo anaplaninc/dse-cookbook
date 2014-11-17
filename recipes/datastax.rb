@@ -8,7 +8,7 @@ node['cassandra']['data_dir'].each do |dir|
   directory dir do
     owner node['cassandra']['user']
     group node['cassandra']['group']
-    mode "775"
+    mode "777"
     recursive true
     action :create
   end
