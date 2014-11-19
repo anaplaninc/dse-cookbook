@@ -82,7 +82,7 @@ when "org.apache.cassandra.locator.PropertyFileSnitch"
 #Requires a chef search or some type of variable so every node knows every other node's datacenter and IP
   if Chef::Config[:solo]
     Chef::Log.warn("This recipe uses search. Chef Solo does not support search. Setting a default for testing.")
-    cluster = [{"name"=>node['hostname'], "ip"=>node['ipaddress'], "dc"=>"TTC:RAC1"}]
+    cluster = [{"name"=>node['hostname'], "ip"=>node['ipaddress'], "dc"=>"dc1:rac1"}]
   else
     #Set the cluster to the wrapper attribute if it exists
     cluster = node['cluster']
