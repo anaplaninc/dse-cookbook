@@ -33,7 +33,7 @@
 #10.20.114.15=DC2:RAC2
 
 <% @cluster.each do |result| %>
-<%= result['ip'] %>=<% if result['dc'] %><%= result['dc'] %><% else %>NoDC<% end %>
+<%= result['ip'] %>=<% if result['dc'] %><%= result['dc'] %><% else %>NoDC<% end %>:<% if result['rack'] %><%= result['rack'] %><% else %>NoRACK<% end %>
 <% end %>
 
 # default for unknown nodes
