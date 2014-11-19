@@ -17,13 +17,13 @@
 # These properties are used with GossipingPropertyFileSnitch and will
 # indicate the rack and dc for this node
 <% if node['cassandra']['hadoop'] %>
-dc=hadoop<%= node['datacenter'] %>
+dc=hadoop<%= node['dc'] %>
 <% elsif node['cassandra']['solr'] %>
-dc=solr<%= node['datacenter'] %>
+dc=solr<%= node['dc'] %>
 <% else %>
-dc=<%= node['datacenter'] %>
+dc=<%= node['dc'] %>
 <% end %>
-rack=RAC1
+rack=<%= node['rack'] %>
 
 # Add a suffix to a datacenter name. Used by the Ec2Snitch and Ec2MultiRegionSnitch
 # to append a string to the EC2 region name.
